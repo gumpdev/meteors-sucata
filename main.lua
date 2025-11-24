@@ -1,10 +1,13 @@
 local Player = require("player")
 local Meteor = require("meteor")
+local UI = require("ui")
 
 sucata.window.set_window_size(512, 512)
 sucata.window.set_window_title("Meteors Sucata")
 sucata.window.set_keep_aspect(true)
-sucata.window.show_debug_info(true)
+
+Life = 5
+Points = 0
 
 function SpawnMeteor()
 	sucata.scene.spawn(Meteor())
@@ -16,4 +19,4 @@ sucata.time.create_timer(SpawnMeteor, {
 	auto_start = true
 })
 
-sucata.scene.load_scene({ Player(32, 480) })
+sucata.scene.load_scene({ Player(32, 480), UI() })

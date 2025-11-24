@@ -40,8 +40,8 @@ function Bullet:update()
 					height = 32
 				}) then
 			meteor.health = meteor.health - 1
-			print("Meteor hit! Health: " .. meteor.health)
 			if meteor.health <= 0 then
+				Points = Points + 10
 				sucata.scene.destroy(meteor)
 			end
 			sucata.scene.destroy(self)
