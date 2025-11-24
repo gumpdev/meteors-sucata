@@ -3,7 +3,6 @@ local Meteor = require("meteor")
 
 sucata.window.set_window_size(512, 512)
 sucata.window.set_window_title("Meteors Sucata")
-sucata.window.set_vsync(0)
 sucata.window.set_keep_aspect(true)
 sucata.window.show_debug_info(true)
 
