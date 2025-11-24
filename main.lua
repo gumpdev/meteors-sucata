@@ -5,6 +5,7 @@ local UI = require("ui")
 sucata.window.set_window_size(512, 512)
 sucata.window.set_window_title("Meteors Sucata")
 sucata.window.set_keep_aspect(true)
+sucata.window.show_debug_info(true)
 
 Life = 5
 Points = 0
