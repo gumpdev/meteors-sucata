@@ -8,6 +8,13 @@ function Bullet:new(x, y, speed)
 	self.speed = speed or 300
 end
 
+function Bullet:init()
+	sucata.audio.play({
+		sound = "src://sounds/shoot.ogg",
+		group = "sfx",
+	})
+end
+
 function Bullet:draw()
 	sucata.graphic.draw_rect({
 		x = self.x,
@@ -41,7 +48,7 @@ function Bullet:update()
 				}) then
 			meteor.health = meteor.health - 1
 			if meteor.health <= 0 then
-				Points = Points + 10
+				sucata.events.emit("meteor_destroyed", meteor)
 				sucata.scene.destroy(meteor)
 			end
 			sucata.scene.destroy(self)

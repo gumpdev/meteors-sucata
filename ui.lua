@@ -2,6 +2,16 @@ local Object = require("classic")
 
 local UI = Object:extend()
 
+function UI:init()
+	sucata.events.on(self, "meteor_destroyed", function(_)
+		Points = Points + 10
+	end)
+
+	sucata.events.on(self, "meteor_reached", function(_)
+		Life = Life - 1
+	end)
+end
+
 function UI:draw()
 	sucata.graphic.draw_text({
 		text = "Life: " .. Life,

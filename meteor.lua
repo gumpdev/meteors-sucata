@@ -16,7 +16,7 @@ function Meteor:update()
 	local dt = sucata.time.get_delta()
 	self.y = self.y + self.speed * dt
 	if self.y > 528 then
-		Life = Life - 1
+		sucata.events.emit("meteor_reached", self)
 		sucata.scene.destroy(self)
 	end
 end
