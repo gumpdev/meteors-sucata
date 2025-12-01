@@ -37,19 +37,19 @@ function Player:update()
 
 	if sucata.input.is_held("left", "a") and self.x > 20 then
 		self.x = self.x - self.speed * dt
-		self.inclination = math.max(0, self.inclination - (10 * dt))
+		self.inclination = math.max(0, self.inclination - (25 * dt))
 		moving = true
 	elseif sucata.input.is_held("right", "d") and self.x < 492 then
 		self.x = self.x + self.speed * dt
-		self.inclination = math.min(4, self.inclination + (10 * dt))
+		self.inclination = math.min(4, self.inclination + (25 * dt))
 		moving = true
 	end
 
 	if not moving then
 		if self.inclination < 2 then
-			self.inclination = math.min(2, self.inclination + (10 * dt))
+			self.inclination = math.min(2, self.inclination + (25 * dt))
 		elseif self.inclination > 2 then
-			self.inclination = math.max(2, self.inclination - (10 * dt))
+			self.inclination = math.max(2, self.inclination - (25 * dt))
 		end
 	end
 end
